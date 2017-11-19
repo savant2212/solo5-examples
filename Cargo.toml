@@ -1,0 +1,10 @@
+[package]
+name = "solo5_hello"
+version = "0.1.0"
+authors = ["Nikita Nazarenko <savant.d@gmail.com>"]
+
+[dependencies]
+solo5 = { git = "https://github.com/savant2212/solo5-rs" }
+
+[lib]
+crate-type = ["staticlib"]
