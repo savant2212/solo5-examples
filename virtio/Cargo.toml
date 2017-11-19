@@ -1,0 +1,14 @@
+[package]
+name = "solo5_hello"
+version = "0.1.0"
+authors = ["Nikita Nazarenko <savant.d@gmail.com>"]
+
+[profile.dev]
+debug = true
+opt-level = 0
+
+[dependencies]
+solo5 = { git = "https://github.com/savant2212/solo5-rs", features = ["virtio"] }
+
+[lib]
+crate-type = ["staticlib"]
