@@ -43,12 +43,12 @@ SECTIONS {
 
     . = ALIGN(0x1000);
     _edata = .;
-
+    
     /* Read-write data (uninitialized) */
     .bss :
     {
-        *(.bss)
-        *(COMMON)
+        *(.bss*)
+        *(COMMON*)
     }
 
     . = ALIGN(0x1000);

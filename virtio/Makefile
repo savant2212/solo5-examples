@@ -1,3 +1,6 @@
+mkfile_path := $(abspath $(lastword $(MAKEFILE_LIST)))
+current_dir := $(patsubst %/,%,$(dir $(mkfile_path)))
+
 # If the first argument is "run"...
 ifeq (run,$(firstword $(MAKECMDGOALS)))
   # use the rest as arguments for "run"
@@ -11,7 +14,7 @@ endif
 all: lib output
 
 lib:
-	xargo build --target x86_64-solrs
+	RUST_TARGET_PATH="${current_dir}" xargo build --target x86_64-solrs
 
 output:
 	ld -o virtio.elf -T solo5.lds target/x86_64-solrs/debug/libsolo5_hello.a  -nostdlib -z max-page-size=0x1000 -static

@@ -48,8 +48,8 @@ SECTIONS {
     /* Read-write data (uninitialized) */
     .bss :
     {
-        *(.bss)
-        *(COMMON)
+        *(.bss*)
+        *(COMMON*)
     }
 
     . = ALIGN(0x1000);
