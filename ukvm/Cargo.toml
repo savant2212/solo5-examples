@@ -4,7 +4,7 @@ version = "0.1.0"
 authors = ["Nikita Nazarenko <savant.d@gmail.com>"]
 
 [dependencies]
-solo5 = { path = "/home/savant/devel/solo5/solo5-rs", features = ["ukvm"] }
+solo5 = { git = "https://github.com/savant2212/solo5-rs.git", features = ["ukvm"] }
 
 [lib]
 crate-type = ["staticlib"]
