@@ -1,0 +1,15 @@
+language: rust
+rust:
+    - nightly
+sudo: false
+dist: trusty
+addons:
+    apt:
+        packages:
+            - qemu-system-x86
+            - gcc
+script:
+    - make -C virtio
+    - make -C ukvm
+    - make -C virtio run
+    - make -C ukvm run
