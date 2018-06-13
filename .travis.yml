@@ -1,0 +1,17 @@
+language: rust
+rust:
+    - nightly
+sudo: false
+dist: trusty
+addons:
+    apt:
+        packages:
+            - qemu-system-x86
+            - gcc
+script:
+    - cargo install xargo
+    - rustup component add rust-src
+    - make -C virtio
+    - make -C ukvm
+    - make -C virtio run
+    - make -C ukvm run
