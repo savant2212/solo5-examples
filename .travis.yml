@@ -10,6 +10,7 @@ addons:
             - gcc
 script:
     - cargo install xargo
+    - rustup component add rust-src
     - make -C virtio
     - make -C ukvm
     - make -C virtio run
