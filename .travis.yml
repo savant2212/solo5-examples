@@ -9,6 +9,7 @@ addons:
             - qemu-system-x86
             - gcc
 script:
+    - cargo install xargo
     - make -C virtio
     - make -C ukvm
     - make -C virtio run
